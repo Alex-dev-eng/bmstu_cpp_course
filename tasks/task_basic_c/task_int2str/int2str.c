@@ -58,7 +58,6 @@ char* int2str(int number)
 		number /= 10;
 	} while (number > 0);
 
-	// Добавление знака минус если нужно
 	if (isNegative)
 	{
 		str[0] = '-';
