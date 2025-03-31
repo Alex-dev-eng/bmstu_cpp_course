@@ -34,7 +34,7 @@ int str2int(const char* str)
 			   (das == 1 && result >= 0));
 	}
 
-	// Проверка что были обработаны цифры 
+	// Проверка что были обработаны цифры
 	assert(digit_count > 0);
 
 	return result * das;
