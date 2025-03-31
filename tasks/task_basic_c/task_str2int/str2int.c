@@ -21,7 +21,7 @@ int str2int(const char* str)
 
 	int digit_count = 0;
 
-	// Обработка каждой цифры числа hui
+	// Обработка каждой цифры числа
 	while (*str != '\0')
 	{
 		result = result * 10 + (*str - '0');
