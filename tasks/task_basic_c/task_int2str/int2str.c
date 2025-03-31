@@ -5,7 +5,7 @@
 
 char* int2str(int number)
 {
-	// Специальный случай для минимального значения int
+	
 	if (number == -2147483648)
 	{
 		char* result = (char*)malloc(12);
@@ -15,7 +15,7 @@ char* int2str(int number)
 		return result;
 	}
 
-	// Обработка нуля
+	
 	if (number == 0)
 	{
 		char* result = (char*)malloc(2);
@@ -25,7 +25,7 @@ char* int2str(int number)
 		return result;
 	}
 
-	// Определение знака
+
 	bool isNegative = false;
 	if (number < 0)
 	{
@@ -33,7 +33,7 @@ char* int2str(int number)
 		number = -number;
 	}
 
-	// Вычисление длины числа
+	
 	int len = 0;
 	int temp = number;
 	while (temp != 0)
@@ -42,23 +42,23 @@ char* int2str(int number)
 		len++;
 	}
 
-	// Выделение памяти с учетом знака и нуль-терминатора
+	
 	char* str = (char*)malloc(len + isNegative + 1);
 	if (str == NULL)
 		return NULL;
 
-	// Заполнение строки с конца
+
 	int i = len + isNegative;
 	str[i--] = '\0';
 
-	// Запись цифр
+	
 	do
 	{
 		str[i--] = (number % 10) + '0';
 		number /= 10;
 	} while (number > 0);
 
-	// Добавление знака минус если нужно
+	
 	if (isNegative)
 	{
 		str[0] = '-';
